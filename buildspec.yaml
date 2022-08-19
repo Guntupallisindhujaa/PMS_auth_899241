@@ -8,7 +8,7 @@ phases:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - echo XXXX | docker login --username leos12 --password-stdin
+    - echo XXXX | docker login --username sindhujaaguntupalli --password-Sindhu#64
     - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
     - IMAGE_URI=860061945305.dkr.ecr.us-west-2.amazonaws.com/pms_auth_899241:${TAG}
   build:
