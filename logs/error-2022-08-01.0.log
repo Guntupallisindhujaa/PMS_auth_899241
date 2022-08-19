@@ -1,0 +1,5 @@
+2022-07-31_19-41-10 [http-nio-8000-exec-3] ERROR c.a.config.JwtRequestFilter - JWT Token has been  expired---ExpiredJwtException
+2022-07-31_19-41-10 [http-nio-8000-exec-6] ERROR c.a.exception.GlobalExceptionHandler - Bad credentials
+2022-07-31_19-41-10 [http-nio-8000-exec-9] ERROR c.a.exception.GlobalExceptionHandler - Bad credentials
+2022-07-31_19-41-10 [http-nio-8000-exec-7] ERROR c.a.config.JwtRequestFilter - JWT Token has been  expired---ExpiredJwtException
+2022-07-31_19-41-10 [http-nio-8000-exec-7] ERROR c.a.exception.GlobalExceptionHandler - query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2

@@ -1,0 +1,35 @@
+2022-08-10_09-58-15 [main] ERROR c.a.exception.GlobalExceptionHandler - Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.authorization.controller.JwtAuthenticationController.createAuthenticationToken(com.authorization.model.JwtRequest) throws com.authorization.exception.AuthorizationException
+2022-08-10_09-58-15 [main] ERROR c.a.exception.GlobalExceptionHandler - Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.authorization.controller.JwtAuthenticationController.createAuthenticationToken(com.authorization.model.JwtRequest) throws com.authorization.exception.AuthorizationException
+2022-08-10_09-58-15 [main] ERROR c.a.exception.GlobalExceptionHandler - Cannot invoke "org.springframework.security.core.Authentication.getCredentials()" because "auth" is null
+2022-08-10_09-58-15 [main] ERROR c.a.exception.GlobalExceptionHandler - Cannot invoke "org.springframework.security.core.Authentication.getCredentials()" because "auth" is null
+2022-08-10_09-58-15 [main] ERROR c.a.exception.GlobalExceptionHandler - message
+2022-08-10_09-58-15 [main] ERROR c.a.exception.GlobalExceptionHandler - message
+2022-08-10_11-04-41 [http-nio-8000-exec-2] ERROR c.a.exception.GlobalExceptionHandler - Bad credentials
+2022-08-10_11-05-12 [main] ERROR c.a.exception.GlobalExceptionHandler - Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.authorization.controller.JwtAuthenticationController.createAuthenticationToken(com.authorization.model.JwtRequest) throws com.authorization.exception.AuthorizationException
+2022-08-10_11-05-12 [main] ERROR c.a.exception.GlobalExceptionHandler - Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.authorization.controller.JwtAuthenticationController.createAuthenticationToken(com.authorization.model.JwtRequest) throws com.authorization.exception.AuthorizationException
+2022-08-10_11-05-12 [main] ERROR c.a.exception.GlobalExceptionHandler - Cannot invoke "org.springframework.security.core.Authentication.getCredentials()" because "auth" is null
+2022-08-10_11-05-12 [main] ERROR c.a.exception.GlobalExceptionHandler - Cannot invoke "org.springframework.security.core.Authentication.getCredentials()" because "auth" is null
+2022-08-10_11-05-12 [main] ERROR c.a.exception.GlobalExceptionHandler - message
+2022-08-10_11-05-12 [main] ERROR c.a.exception.GlobalExceptionHandler - message
+2022-08-10_11-05-19 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8000 or configure this application to listen on another port.
+
+2022-08-10_11-07-42 [main] ERROR c.a.exception.GlobalExceptionHandler - Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.authorization.controller.JwtAuthenticationController.createAuthenticationToken(com.authorization.model.JwtRequest) throws com.authorization.exception.AuthorizationException
+2022-08-10_11-07-42 [main] ERROR c.a.exception.GlobalExceptionHandler - Required request body is missing: public org.springframework.http.ResponseEntity<java.lang.Object> com.authorization.controller.JwtAuthenticationController.createAuthenticationToken(com.authorization.model.JwtRequest) throws com.authorization.exception.AuthorizationException
+2022-08-10_11-07-42 [main] ERROR c.a.exception.GlobalExceptionHandler - Cannot invoke "org.springframework.security.core.Authentication.getCredentials()" because "auth" is null
+2022-08-10_11-07-42 [main] ERROR c.a.exception.GlobalExceptionHandler - Cannot invoke "org.springframework.security.core.Authentication.getCredentials()" because "auth" is null
+2022-08-10_11-07-42 [main] ERROR c.a.exception.GlobalExceptionHandler - message
+2022-08-10_11-07-42 [main] ERROR c.a.exception.GlobalExceptionHandler - message
+2022-08-10_11-26-10 [http-nio-8000-exec-4] ERROR c.a.config.JwtRequestFilter - JWT Token has been  expired---ExpiredJwtException
+2022-08-10_11-26-10 [http-nio-8000-exec-6] ERROR c.a.config.JwtRequestFilter - JWT Token has been  expired---ExpiredJwtException
