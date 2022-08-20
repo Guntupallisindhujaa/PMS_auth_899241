@@ -2,62 +2,30 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17
+      java: corretto11
   pre_build:
     commands:
     - echo Logging in to Amazon ECR...
     - aws --version
-    - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 860061945305.dkr.ecr.us-west-2.amazonaws.com
-    - IMAGE_NAME=pms_auth_899241
-    - IMAGE_URI=860061945305.dkr.ecr.us-west-2.amazonaws.com/pms_auth_899241:latest
-    - CONTAINER_NAME=pms_auth_899241
+    - echo Sindhu#64 | docker login --username sindhujaaguntupalli --password-stdin
+    - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+    - IMAGE_URI=860061945305.dkr.ecr.us-west-2.amazonaws.com/pms_auth_899241:${TAG}
   build:
     commands:
     - echo Build started on `date`
-    - echo $IMAGE_NAME
+    - echo $IMAGE_URI
     - mvn clean package -Ddockerfile.skip
-    - docker build -t $IMAGE_NAME .
+    - docker build --tag $IMAGE_URI .
   post_build:
     commands:
+    - printenv
     - echo Build completed on `date`
     - echo $(docker images)
-    - docker tag $IMAGE_NAME $IMAGE_URI
+    - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 860061945305.dkr.ecr.us-west-2.amazonaws.com
     - echo Pushing docker image
     - docker push $IMAGE_URI
     - echo push completed
-    - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $IMAGE_URI > imagedefinitions.json
+    - printf '[{"name":"%s","imageUri":"%s"}]' pms_auth_cn $IMAGE_URI > imagedefinitions.json
 artifacts:
   files:
   - imagedefinitions.json
-
-# version: 0.2
-# phases:
-#   install:
-#     runtime-versions:
-#       java: corretto17
-#   pre_build:
-#     commands:
-#     - echo Logging in to Amazon ECR...
-#     - aws --version
-#     - echo XXXX | docker login --username sindhujaaguntupalli --password-stdin
-#     - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
-#     - IMAGE_URI=860061945305.dkr.ecr.us-west-2.amazonaws.com/pms_auth_899241:${TAG}
-#   build:
-#     commands:
-#     - echo Build started on `date`
-#     - echo $IMAGE_URI
-#     - mvn clean package -Ddockerfile.skip
-#     - docker build --tag $IMAGE_URI .
-#   post_build:
-#     commands:
-#     - printenv
-#     - echo Build completed on `date`
-#     - echo $(docker images)
-#     - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 860061945305.dkr.ecr.us-west-2.amazonaws.com
-#     - echo Pushing docker image
-#     - docker push $IMAGE_URI
-#     - echo push completed
-#     - printf '[{"name":"%s","imageUri":"%s"}]' pms-XXXX-auth-Container $IMAGE_URI > imagedefinitions.json
-# artifacts:
-#   files:
-#   - imagedefinitions.json
