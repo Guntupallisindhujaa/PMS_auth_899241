@@ -14,7 +14,7 @@ phases:
     commands:
     - echo Build started on `date`
     - echo $IMAGE_URI
-    - vn compile 
+    - mvn compile 
     - mvn clean package -Dmaven.test.skip=true
 #     - mvn clean package -Ddockerfile.skip
     - docker build --tag $IMAGE_URI .
